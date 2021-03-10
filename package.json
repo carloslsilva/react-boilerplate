@@ -1,0 +1,13 @@
+{
+  "name": "react-boilerplate",
+  "description": "React Boilerplate based on Webpack",
+  "author": "@carloslsilva",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,jsx,json,css,scss,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  }
+}
