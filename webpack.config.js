@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
@@ -37,6 +38,31 @@ module.exports = {
             presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }
+      },
+      {
+        test: /\.s?css/,
+        use: [
+          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: isDevelopment,
+              importLoaders: 1,
+              modules: {
+                compileType: 'module',
+                auto: true,
+                localIdentName: isDevelopment ? '[name]__[local]' : '[contenthash:base64]',
+                exportLocalsConvention: 'camelCase'
+              }
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: isDevelopment
+            }
+          }
+        ]
       }
     ]
   },
@@ -44,6 +70,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, project.path.source, 'template.html'),
       title: project.title
+    }),
+    new MiniCssExtractPlugin({
+      filename: isDevelopment ? '[name].css' : '[name].[contenthash].css',
+      chunkFilename: isDevelopment ? '[id].css' : '[id].[contenthash].css'
     }),
     new CleanWebpackPlugin({})
   ]
