@@ -30,7 +30,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -40,7 +40,7 @@ module.exports = {
         }
       },
       {
-        test: /\.s?css/,
+        test: /\.s?css$/,
         use: [
           isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
