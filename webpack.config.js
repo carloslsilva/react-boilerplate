@@ -19,7 +19,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, project.path.build),
-    filename: isDevelopment ? '[name].js' : '[name].[contenthash].js'
+    filename: isDevelopment ? '[name].js' : '[hash].js',
+    assetModuleFilename: isDevelopment ? 'images/[name][ext]' : 'images/[hashcontent][ext]'
   },
   mode: isDevelopment ? 'development' : 'production',
   devServer: {
@@ -63,6 +64,10 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(jpe?g|png|gif)$/,
+        type: 'asset/resource'
       }
     ]
   },
