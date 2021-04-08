@@ -19,8 +19,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, project.path.build),
-    filename: isDevelopment ? '[name].js' : '[hash].js',
-    assetModuleFilename: isDevelopment ? 'images/[name][ext]' : 'images/[hashcontent][ext]'
+    filename: isDevelopment ? '[name].js' : '[contenthash].js',
+    assetModuleFilename: isDevelopment ? 'images/[name][ext]' : 'images/[contenthash][ext]'
   },
   mode: isDevelopment ? 'development' : 'production',
   devServer: {
