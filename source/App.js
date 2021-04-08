@@ -1,15 +1,16 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Title } from './components/Title'
 import { Paragraph } from './components/Paragraph'
-import styles from './App.module.scss'
+import { Picture } from './components/Picture'
 import picture from './assets/picture.jpg'
 
 export const App = props => (
   <>
     <header>
-      <Title>React Boilerplate!!!</Title>
+      <Title>React Boilerplate</Title>
     </header>
-    <main className={styles.container}>
+    <Main>
       <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -17,7 +18,15 @@ export const App = props => (
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
         laborum.
       </Paragraph>
-      <img src={picture} />
-    </main>
+      <Picture src={picture} />
+    </Main>
   </>
 )
+
+const Main = styled.main`
+  display: flex;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`
