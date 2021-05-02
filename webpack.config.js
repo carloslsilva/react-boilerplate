@@ -76,6 +76,10 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif)$/,
         type: 'asset/resource'
+      },
+      {
+        test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+        type: 'asset/inline'
       }
     ]
   },
