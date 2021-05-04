@@ -37,14 +37,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
-            plugins: [
-              [
-                'babel-plugin-styled-components',
-                {
-                  displayName: isDevelopment
-                }
-              ]
-            ]
+            plugins: [['babel-plugin-styled-components', { displayName: isDevelopment }]]
           }
         }
       },
@@ -78,7 +71,7 @@ module.exports = {
         type: 'asset/resource'
       },
       {
-        test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+        test: /\.(woff|woff2|ttf|eot|svg)$/,
         type: 'asset/inline'
       }
     ]

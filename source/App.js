@@ -4,6 +4,7 @@ import { Title } from './components/Title'
 import { Paragraph } from './components/Paragraph'
 import { Picture } from './components/Picture'
 import picture from './assets/picture.jpg'
+import fornite from './assets/FortniteLogo.svg'
 
 export const App = props => (
   <>
@@ -20,6 +21,9 @@ export const App = props => (
       </Paragraph>
       <Picture src={picture} />
     </Main>
+    <footer>
+      <Picture src={fornite} />
+    </footer>
   </>
 )
 
