@@ -19,13 +19,14 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, project.path.build),
-    filename: isDevelopment ? '[name].js' : '[contenthash].js',
+    filename: isDevelopment ? '[name].js' : '[name][contenthash].js',
     assetModuleFilename: isDevelopment ? 'images/[name][ext]' : 'images/[contenthash][ext]'
   },
   mode: isDevelopment ? 'development' : 'production',
+  devtool: isDevelopment ? 'eval-cheap-module-source-map' : false,
   devServer: {
     port: 9000,
-    open: true,
+    open: true
   },
   module: {
     rules: [
