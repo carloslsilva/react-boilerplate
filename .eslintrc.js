@@ -3,7 +3,6 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ['plugin:react/recommended', 'google', 'prettier'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
@@ -11,7 +10,13 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module'
   },
+  extends: ['plugin:react/recommended', 'google', 'prettier'],
   plugins: ['react'],
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  },
   rules: {
     'react/prop-types': 'off'
   }
