@@ -25,6 +25,7 @@ module.exports = {
   mode: isDevelopment ? 'development' : 'production',
   devtool: isDevelopment ? 'eval-cheap-module-source-map' : false,
   devServer: {
+    historyApiFallback: true,
     port: 9000,
     open: true
   },
