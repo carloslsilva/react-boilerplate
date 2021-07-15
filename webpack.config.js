@@ -78,6 +78,9 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.json']
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, project.path.source, 'index.html'),

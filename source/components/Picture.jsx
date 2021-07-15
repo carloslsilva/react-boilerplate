@@ -1,9 +1,6 @@
-import React from 'react'
 import styled from 'styled-components'
 
-export const Picture = props => <PictureWrapper {...props} />
-
-const PictureWrapper = styled.img`
+const Picture = styled.img`
   border-radius: 6px;
   width: 20%;
   height: auto;
@@ -14,3 +11,4 @@ const PictureWrapper = styled.img`
     width: 100%;
   }
 `
+export default Picture

@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { Title } from './components/Title'
-import { Paragraph } from './components/Paragraph'
-import { Picture } from './components/Picture'
+import Title from './components/Title'
+import Paragraph from './components/Paragraph'
+import Picture from './components/Picture'
 import picture from './assets/picture.jpg'
 
-export const App = props => (
+export const App = () => (
   <BrowserRouter>
     <Nav>
       <ul>
@@ -32,7 +32,9 @@ export const App = props => (
   </BrowserRouter>
 )
 
-const Home = props => (
+export default App
+
+const Home = () => (
   <>
     <header>
       <Title>React Boilerplate</Title>
@@ -50,7 +52,7 @@ const Home = props => (
   </>
 )
 
-const Another = props => (
+const Another = () => (
   <>
     <header>
       <Title>Another Page</Title>
@@ -66,7 +68,7 @@ const Another = props => (
   </>
 )
 
-const NotFound = props => (
+const NotFound = () => (
   <>
     <header>
       <Title>Not Found Page</Title>
