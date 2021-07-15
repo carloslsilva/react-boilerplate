@@ -23,6 +23,7 @@ module.exports = {
     clean: true
   },
   mode: isDevelopment ? 'development' : 'production',
+  stats: isDevelopment ? 'errors-warnings' : 'normal',
   devtool: isDevelopment ? 'eval-cheap-module-source-map' : false,
   devServer: {
     historyApiFallback: true,
