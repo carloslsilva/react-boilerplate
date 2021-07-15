@@ -8,11 +8,11 @@ import moon from './assets/moon.jpg'
 export const App = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path='/'>
-        <Home />
-      </Route>
-      <Route exact path='/another'>
+      <Route exact strict path='/another'>
         <Another />
+      </Route>
+      <Route exact strict path='/'>
+        <Home />
       </Route>
       <Route path='*'>
         <NotFound />
