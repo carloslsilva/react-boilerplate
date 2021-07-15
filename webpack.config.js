@@ -1,7 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
@@ -20,7 +19,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, project.path.build),
     filename: isDevelopment ? '[name].js' : '[name][contenthash].js',
-    assetModuleFilename: isDevelopment ? 'images/[name][ext]' : 'images/[contenthash][ext]'
+    assetModuleFilename: isDevelopment ? 'images/[name][ext]' : 'images/[contenthash][ext]',
+    clean: true
   },
   mode: isDevelopment ? 'development' : 'production',
   devtool: isDevelopment ? 'eval-cheap-module-source-map' : false,
@@ -85,7 +85,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: isDevelopment ? '[name].css' : '[name].[contenthash].css',
       chunkFilename: isDevelopment ? '[id].css' : '[id].[contenthash].css'
-    }),
-    new CleanWebpackPlugin({})
+    })
   ]
 }
