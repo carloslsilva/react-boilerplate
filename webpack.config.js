@@ -18,7 +18,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, project.path.build),
-    filename: isDevelopment ? '[name].js' : '[name][contenthash].js',
+    filename: isDevelopment ? '[name].js' : '[contenthash].[name].js',
     assetModuleFilename: isDevelopment ? 'images/[name][ext]' : 'images/[contenthash][ext]',
     clean: true
   },
@@ -89,8 +89,8 @@ module.exports = {
       title: project.title
     }),
     new MiniCssExtractPlugin({
-      filename: isDevelopment ? '[name].css' : '[name].[contenthash].css',
-      chunkFilename: isDevelopment ? '[id].css' : '[id].[contenthash].css'
+      filename: isDevelopment ? '[name].css' : '[contenthash].[name].css',
+      chunkFilename: isDevelopment ? '[id].css' : '[contenthash].[id]css'
     })
   ]
 }
