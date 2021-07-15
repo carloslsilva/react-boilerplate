@@ -1,0 +1,27 @@
+.nav {
+  margin-top: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    list-style: none;
+  }
+  li + li {
+    margin-left: 1rem;
+  }
+  a {
+    color: inherit;
+    font-family: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 250ms ease;
+    &:hover {
+      color: black;
+    }
+  }
+}

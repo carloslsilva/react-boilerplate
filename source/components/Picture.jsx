@@ -1,14 +1,7 @@
-import styled from 'styled-components'
+import React from 'react'
+import styles from './Picture.module.scss'
 
-const Picture = styled.img`
-  border-radius: 6px;
-  width: 20%;
-  height: auto;
-  object-fit: cover;
+// eslint-disable-next-line
+const Picture = props => <img className={styles.picture} {...props} />
 
-  @media (max-width: 768px) {
-    margin-top: 2rem;
-    width: 100%;
-  }
-`
 export default Picture
