@@ -1,4 +1,3 @@
-import React from 'react'
 import Title from './Title'
 import Paragraph from './Paragraph'
 import Picture from './Picture'
