@@ -12,15 +12,6 @@
     "lint": "eslint \"*/**/*.{js,jsx}\"",
     "prepare": "husky install"
   },
-  "lint-staged": {
-    "*.+(js|jsx)": [
-      "eslint --fix",
-      "prettier --write --ignore-unknown"
-    ],
-    "*.+(html,json|css|scss|md)": [
-      "prettier --write"
-    ]
-  },
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
