@@ -19,17 +19,17 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, project.path.build),
     filename: isDevelopment ? '[name].js' : '[contenthash].[name].js',
-    assetModuleFilename: isDevelopment ? 'images/[name][ext]' : 'images/[contenthash][ext]',
+    assetModuleFilename: isDevelopment ? 'assets/[name][ext]' : 'assets/[contenthash][ext]',
     publicPath: '/',
     clean: true
   },
   mode: isDevelopment ? 'development' : 'production',
-  stats: isDevelopment ? 'errors-warnings' : 'normal',
   devtool: isDevelopment ? 'eval-cheap-module-source-map' : false,
+  stats: isDevelopment ? 'errors-warnings' : 'normal',
   devServer: {
     historyApiFallback: true,
     port: 9000,
-    open: true
+    open: false
   },
   module: {
     rules: [
@@ -56,7 +56,6 @@ module.exports = {
               sourceMap: isDevelopment,
               importLoaders: 1,
               modules: {
-                compileType: 'module',
                 auto: true,
                 localIdentName: isDevelopment ? '[name]__[local]' : '[contenthash:base64]',
                 exportLocalsConvention: 'camelCase'
@@ -86,7 +85,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, project.path.source, 'index.html'),
+      template: path.resolve(__dirname, project.path.source, 'template.html'),
       title: project.title
     }),
     new MiniCssExtractPlugin({
