@@ -5,7 +5,7 @@ import PageContent from './components/PageContent'
 import picture from './assets/picture.jpg'
 import moon from './assets/moon.jpg'
 
-export const App = () => (
+const App = () => (
   <BrowserRouter>
     <Switch>
       <Route exact strict path='/another'>
